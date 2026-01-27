@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter - Convert Any Unit Instantly</title>
+    <meta name="description" content="Free online unit converter. Convert length, weight, temperature, time, data, and more instantly.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📐 Unit Converter</h1>
+            <p class="tagline">Convert anything to anything, instantly</p>
+        </header>
+
+        <main>
+            <!-- Category Selector -->
+            <div class="categories">
+                <button class="cat-btn active" data-category="length">📏 Length</button>
+                <button class="cat-btn" data-category="weight">⚖️ Weight</button>
+                <button class="cat-btn" data-category="temperature">🌡️ Temp</button>
+                <button class="cat-btn" data-category="volume">🥛 Volume</button>
+                <button class="cat-btn" data-category="area">📐 Area</button>
+                <button class="cat-btn" data-category="time">⏱️ Time</button>
+                <button class="cat-btn" data-category="speed">🚗 Speed</button>
+                <button class="cat-btn" data-category="data">💾 Data</button>
+            </div>
+
+            <!-- Converter -->
+            <div class="converter-section">
+                <div class="converter-row">
+                    <div class="input-group">
+                        <input type="number" id="from-value" placeholder="Enter value" autofocus>
+                        <select id="from-unit"></select>
+                    </div>
+                    <button class="swap-btn" id="swap-btn" title="Swap">⇄</button>
+                    <div class="input-group">
+                        <input type="number" id="to-value" readonly>
+                        <select id="to-unit"></select>
+                    </div>
+                </div>
+                
+                <div class="formula-display" id="formula-display">
+                    Enter a value to see the conversion
+                </div>
+            </div>
+
+            <!-- Quick Conversions -->
+            <div class="quick-section">
+                <h2>Quick Reference</h2>
+                <div class="quick-grid" id="quick-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- All Conversions Table -->
+            <div class="table-section">
+                <h2>All Conversions</h2>
+                <div class="table-wrapper">
+                    <table id="conversion-table">
+                        <thead>
+                            <tr>
+                                <th>Unit</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- History -->
+            <div class="history-section">
+                <h2>📜 Recent Conversions <button id="clear-history" class="clear-btn">Clear</button></h2>
+                <div class="history-list" id="history-list">
+                    <p class="empty-state">Your conversions will appear here</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Made for quick conversions ⚡</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
